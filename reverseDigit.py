@@ -43,3 +43,7 @@ print reverseDigit(429496729);
 
 # 向负无穷取值的含义是：9/7=1 .29----向0取值-->1；-9/7=-1.29----向0取值------>-2
 
+#*************** Difference between // and / **********
+# // is for integer division
+# / is for floating point division
+
