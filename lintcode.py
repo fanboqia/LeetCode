@@ -95,3 +95,36 @@
 
 # 向负无穷取值的含义是：9/7=1 .29----向0取值-->1；-9/7=-1.29----向0取值------>-2
 
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+
+class Solution:
+    """
+    @param n: The number of digits
+    @return: All narcissistic numbers with n digits
+    """
+    def getNarcissisticNumbers(self, n):
+        nums = []
+        for i in range(10**(n-1),10**n):
+            print str(i).split('')
+        return nums;
+
+    #rotate of string
+    def rotate(self,str,offset):
+    	return str[len(str)-offset:]+str[:len(str)-offset]
+
+    #binary tree traversal
+    def searchRange(self, root, k1, k2):
+        # write your code here
+        nums = []
+        self.traverse(root,k1,k2,nums)
+        return nums
+    def traverse(self,root,k1,k2,arr):
+        if root != None:
+            #preorder search
+            if root.val >= k1 and root.val <= k2:
+                arr.append(root.val)
+            self.traverse(root.left,k1,k2,arr)
+            self.traverse(root.right,k1,k2,arr)
