@@ -3,11 +3,11 @@ function twoSum(numbers,target){
     for(var i in numbers){
         var sub = target - numbers[i];
 
-        if(map[numbers[i]] == 'find'){
+        if(typeof map[numbers[i]] == 'number'){
             return [Number(map[target - numbers[i]]),Number(i)];
         }
 
         map[numbers[i]] = i;
-        map[sub] = 'find';
+        map[sub] = sub;
     }
 }
