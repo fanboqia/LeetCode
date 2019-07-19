@@ -1,14 +1,19 @@
 function twoSum(numbers,target){
-    var map = {};
-    var toFindMap = {};
+    var numToIndex = {};
+    var numAnother = {};
     for(var i = 0; i < numbers.length; i++){
+        // another number to find
         var sub = target - numbers[i];
 
-        if(toFindMap[numbers[i]] !== undefined){
-            return [map[sub],i];
+        //has the another number been registered
+        if(numAnother[numbers[i]] !== undefined){
+            return [numToIndex[sub],i];
         }
 
-        map[numbers[i]] = i;
-        toFindMap[sub] = sub;
+        //register current number with its index
+        numToIndex[numbers[i]] = i;
+        //register the another number
+        numAnother[sub] = sub;
     }
+    return [];
 }
