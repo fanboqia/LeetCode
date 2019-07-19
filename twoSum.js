@@ -1,13 +1,14 @@
 function twoSum(numbers,target){
-    var map = {}
-    for(var i in numbers){
+    var map = {};
+    var toFindMap = {};
+    for(var i = 0; i < numbers.length; i++){
         var sub = target - numbers[i];
 
-        if(typeof map[numbers[i]] == 'number'){
-            return [Number(map[target - numbers[i]]),Number(i)];
+        if(toFindMap[numbers[i]] !== undefined){
+            return [map[sub],i];
         }
 
         map[numbers[i]] = i;
-        map[sub] = sub;
+        toFindMap[sub] = sub;
     }
 }
